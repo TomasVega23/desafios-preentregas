@@ -1,0 +1,20 @@
+[
+	{
+		"title": "Producto Actualizado",
+		"description": "Descripción del nuevo producto",
+		"price": 24.99,
+		"thumbnail": "path/to/image.jpg",
+		"code": "ABC123",
+		"stock": 30,
+		"id": 1
+	},
+	{
+		"title": "Nuevo Producto",
+		"description": "Descripción del nuevo producto",
+		"price": 19.99,
+		"thumbnail": "path/to/image.jpg",
+		"code": "ABC123",
+		"stock": 50,
+		"id": 2
+	}
+]

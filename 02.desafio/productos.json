@@ -1,0 +1,11 @@
+[
+  {
+    "title": "Nuevo Producto",
+    "description": "Descripción del nuevo producto",
+    "price": 19.99,
+    "thumbnail": "path/to/image.jpg",
+    "code": "ABC123",
+    "stock": 50,
+    "id": 1
+  }
+]
