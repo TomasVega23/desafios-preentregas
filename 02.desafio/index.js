@@ -1,4 +1,4 @@
-import usuariosManagers from './manager/usuariosManagers.js'
+import usuariosManagers from './src/usuariosManagers.js'
 
 const manager = new usuariosManagers('productos.json');
 
@@ -28,7 +28,7 @@ const product = async () => {
         stock: 30,
       };
     
-      const updateResult =  await manager.updateProduct(productId, updatedProduct);
+    const updateResult =  await manager.updateProduct(productId, updatedProduct);
     console.log('Producto actualizado:', updateResult ? 'Éxito' : 'No se encontró el producto');
 
     // const deleteResult =  await manager.deleteProduct(productId);

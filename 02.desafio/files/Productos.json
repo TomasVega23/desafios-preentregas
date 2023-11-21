@@ -16,5 +16,86 @@
 		"code": "ABC123",
 		"stock": 50,
 		"id": 2
+	},
+	{
+		"title": "Nuevo Producto",
+		"description": "Descripción del nuevo producto",
+		"price": 19.99,
+		"thumbnail": "path/to/image.jpg",
+		"code": "ABC123",
+		"stock": 50,
+		"id": 3
+	},
+	{
+		"title": "Nuevo Producto",
+		"description": "Descripción del nuevo producto",
+		"price": 19.99,
+		"thumbnail": "path/to/image.jpg",
+		"code": "ABC123",
+		"stock": 50,
+		"id": 4
+	},
+	{
+		"title": "Nuevo Producto",
+		"description": "Descripción del nuevo producto",
+		"price": 19.99,
+		"thumbnail": "path/to/image.jpg",
+		"code": "ABC123",
+		"stock": 50,
+		"id": 5
+	},
+	{
+		"title": "Nuevo Producto",
+		"description": "Descripción del nuevo producto",
+		"price": 19.99,
+		"thumbnail": "path/to/image.jpg",
+		"code": "ABC123",
+		"stock": 50,
+		"id": 6
+	},
+	{
+		"title": "Nuevo Producto",
+		"description": "Descripción del nuevo producto",
+		"price": 19.99,
+		"thumbnail": "path/to/image.jpg",
+		"code": "ABC123",
+		"stock": 50,
+		"id": 7
+	},
+	{
+		"title": "Nuevo Producto",
+		"description": "Descripción del nuevo producto",
+		"price": 19.99,
+		"thumbnail": "path/to/image.jpg",
+		"code": "ABC123",
+		"stock": 50,
+		"id": 8
+	},
+	{
+		"title": "Nuevo Producto",
+		"description": "Descripción del nuevo producto",
+		"price": 19.99,
+		"thumbnail": "path/to/image.jpg",
+		"code": "ABC123",
+		"stock": 50,
+		"id": 9
+	},
+	{
+		"title": "Nuevo Producto",
+		"description": "Descripción del nuevo producto",
+		"price": 19.99,
+		"thumbnail": "path/to/image.jpg",
+		"code": "ABC123",
+		"stock": 50,
+		"id": 10
+	},
+	{
+		"title": "Nuevo Producto",
+		"description": "Descripción del nuevo producto",
+		"price": 19.99,
+		"thumbnail": "path/to/image.jpg",
+		"code": "ABC123",
+		"stock": 50,
+		"id": 11
 	}
 ]
