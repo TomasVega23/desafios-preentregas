@@ -11,26 +11,18 @@ app.listen(PORT, () => {
     console.log(`Servidor fucnionando en el puerto: ${PORT}`);
 });
 
-app.get('/products', async (req, res) => {
-    const products = await productManager.getProducts();
-    const limit = req.query.limit;
-    if(limit) {
-        res.send(productList.slice(0, limit));
-    } else {
-        res.json(products);
-    }
+app.get('/products', async (req, res) => {    
+    const limit = req.query.limit ? parseInt(req.query.limit) : null;
+    const products = await productManager.getProducts(limit);
+    res.json({ products });
 });
 
 app.get('/products/:pid', async (req, res) => {
-    const products =  await productManager.getProducts();
     const pid = req.params.pid;
-    const product = products.find((pro)=>{
-        return pro.id === pid;
-    });
-        if(!product){
-            return res.send({
-                error: 'Producto no encontrado'
-            })
-        }
-        res.json({product});
+    const product = await productManager.getProductById(pid);
+    if (product) {
+        res.json(product);
+    } else {
+        res.status(404).send('Producto no encontrado');
+    }
 });
