@@ -1,0 +1,20 @@
+[
+	{
+		"title": "iphone",
+		"description": "celular mobil",
+		"code": "102",
+		"price": 120,
+		"stock": 110,
+		"category": "celular",
+		"id": 1
+	},
+	{
+		"title": "Motorola",
+		"description": "celular mobil",
+		"code": "112",
+		"price": 110,
+		"stock": 10,
+		"category": "celular",
+		"id": 2
+	}
+]
