@@ -36,6 +36,22 @@ class ProductManagerFile {
             return "Not Found"
         }
     }
+    getProductsView = async () => {
+        try {
+         
+    
+          if (fs.existsSync(this.path)) {
+          
+            const productlist = await fs.promises.readFile(this.path, "utf-8");
+            const productlistJs = JSON.parse(productlist);
+              return productlistJs;
+          } else {
+            return [];
+          }
+        } catch (error) {
+          throw new Error(error);
+        }
+    };
     saveProducts() {
         fs.writeFileSync(this.path, JSON.stringify(this.products, null, '\t'), 'utf-8');
     }

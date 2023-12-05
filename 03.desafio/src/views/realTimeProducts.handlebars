@@ -1,0 +1,90 @@
+<form id="formProduct">
+    <h2 >Real Time Products</h2>
+
+    <!-- Nombre del Producto -->
+    <div >
+        <label for="title" class="form-label">Nombre del Producto</label>
+        <div class="input-group">
+            <span class="input-group-text"></span>
+            <input class="form-control" type="text" name="title" id="title" placeholder="Ej. Smartphone" required>
+        </div>
+    </div>
+
+    <!-- Descripción -->
+    <div>
+        <label for="description" class="form-label">Descripción</label>
+        <div class="input-group">
+            <span class="input-group-text"></span>
+            <input class="form-control" type="text" name="description" id="description" placeholder="Ej. Último modelo con características avanzadas" required>
+        </div>
+    </div>
+
+    <!-- Stock -->
+    <div>
+        <label for="stock" class="form-label">Stock</label>
+        <div class="input-group">
+            <span class="input-group-text"></i></span>
+            <input class="form-control" type="number" name="stock" id="stock" placeholder="Ej. 100" required>
+        </div>
+    </div>
+
+    <!-- Categoría -->
+    <div>
+        <label for="category" class="form-label">Categoría</label>
+        <div class="input-group">
+            <span class="input-group-text"></span>
+            <input class="form-control" type="text" name="category" id="category" placeholder="Ej. Electrónicos" required>
+        </div>
+    </div>
+
+    <!-- Precio -->
+    <div>
+        <label for="price" class="form-label">Precio</label>
+        <div class="input-group">
+            <span class="input-group-text"></i></span>
+            <input class="form-control" type="number" name="price" id="price" placeholder="Ej. 499.99" required>
+        </div>
+    </div>
+
+
+    <!-- Código -->
+    <div >
+        <label for="code" class="form-label">Código</label>
+        <div class="input-group">
+            <span class="input-group-text"></span>
+            <input class="form-control" type="text" name="code" id="code" placeholder="Ej. ABC123" required>
+        </div>
+    </div>
+
+    <!-- Botón Registrar -->
+    <div>
+        <button type="submit" id="add-btn">Registrar </button>
+    </div>
+
+    <h2>Eliminar Producto:</h2>
+
+    <!-- ID del Producto a Eliminar -->
+    <div>
+        <label for="id-prod" class="form-label">ID del Producto</label>
+        <div class="input-group">
+            <span class="input-group-text"></span>
+            <input class="form-control" type="number" name="id-prod" id="id-prod" placeholder="Ej. 123">
+        </div>
+    </div>
+
+    <!-- Botón Eliminar -->
+    <div>
+        <button type="button" id="delete-btn">Eliminar</button>
+    </div>
+</form>
+
+
+
+<div class="row mt-4" id="list-products">
+
+</div>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

@@ -1,20 +1,11 @@
 [
 	{
-		"title": "iphone",
-		"description": "celular mobil",
-		"code": "102",
-		"price": 120,
-		"stock": 110,
-		"category": "celular",
+		"title": "121",
+		"description": "21213",
+		"stock": "32132131",
+		"category": "321312",
+		"price": "312312",
+		"code": "312312321",
 		"id": 1
-	},
-	{
-		"title": "Motorola",
-		"description": "celular mobil",
-		"code": "112",
-		"price": 110,
-		"stock": 10,
-		"category": "celular",
-		"id": 2
 	}
 ]
