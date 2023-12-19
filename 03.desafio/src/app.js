@@ -12,10 +12,11 @@ import  socketProducts  from "./socket/socketProducts.js";
 const PORT = 8080;
 
 const app = express();
+const socketServer = new Server(httpServer);
 
 const httpServer = app.listen(PORT, () => console.log(`Escuchando en el puerto ${PORT}`));
 
-const socketServer = new Server(httpServer);
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
