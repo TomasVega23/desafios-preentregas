@@ -47,7 +47,7 @@ io.on("connection", (socket)=>{
     socket.on("chat-message", async (data)=>{
         messages.push(data);
         io.emit("messages", messages);
-        const message =  await new messageModel({
+        const message =  new messageModel({
             message: data.message,
             user: data.username,
             timestamp: new Date()
