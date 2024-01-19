@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import __dirname from './utils.js';
 import {engine} from 'express-handlebars';
 import {Server} from "socket.io";
+import passport from 'passport'
 
 import { cartRouter } from './routes/carts.routes.js';
 import { productRouter } from './routes/products.routes.js';
@@ -12,6 +13,7 @@ import sessionsRouter from "./routes/sessions.routes.js"
 import chatRouter from './routes/chat.routes.js';
 import viewRouter from './routes/views.routes.js';
 import messageModel from './dao/models/message.model.js';
+import inicializePassport from './config/passport.config.js';
 
 
 const PORT = 8080;
@@ -36,6 +38,10 @@ app.use(session({
     resave:false,
     saveUninitialized:false
 }))
+inicializePassport()
+app.use(passport.initialize());
+app.use(passport.session());
+
 const httpServer = app.listen(PORT, () => {
     console.log(`Escuchando en el puerto ${PORT}`);
 })

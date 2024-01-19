@@ -43,6 +43,10 @@ router.get('/login', publicAccess, (req,res)=>{
     res.render('login')
 })
 
+router.get("/resetPassword", (req,res)=>{
+    res.render("resetPassword");
+})
+
 
 
 
