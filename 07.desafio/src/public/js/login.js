@@ -15,10 +15,9 @@ form.addEventListener("submit", e =>{
         }
     }).then(result=>{
         if(result.status===200){
-            window.location.replace('/')
+            window.location.replace("http://localhost:8080/products/");
         }else{
             console.log(result);
         }
     })
-
 })

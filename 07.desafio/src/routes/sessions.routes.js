@@ -2,36 +2,61 @@ import {Router} from "express";
 import userModel from "../dao/models/users.model.js";
 import { createHash, validatePassword } from "../utils.js";
 import passport from "passport"
+import jwt from "jsonwebtoken";
 
 
 const router = Router();
 
-router.post("/usersregister",passport.authenticate("register", {failureRedirect:"/api/sessions/failregister"}),
-async (req,res) => {
-    res.send({status:"success", message:"User registrado"})
-})
-router.get("/failregister", async (req,res)=>{
-    console.log('Fallo el registro');
-    res.send({error: 'fallo en el registro'})
+router.post("/usersregister", passport.authenticate("register",{passReqToCallback:true, session:false, failureRedirect:'api/sessions/failedRegister',
+failureMessage:true}), (req,res)=>{
+    res.send({
+        status:"success",
+        message:"Usuario regsitrado",
+        payload:req.user._id
+    })
+});
+
+router.get("/failedRegister", (req,res)=>{
+    console.log('Mal registro');
+    res.send("Fallo en el registro")
 })
 
-router.post("/login", passport.authenticate("login", {failureRedirect:'/api/session/faillogin'}),
-async (req,res) =>{ 
-    if(!req.user){
-        return res.status(400).send({status:"error"})
-    }
-    req.session.user ={
-        first_name: req.user.first_name,
-        last_name: req.user.last_name,
-        age:req.user.age,
+router.post("/login", passport.authenticate("login",{failureRedirect:"api/sessions/failedLogin",
+session:false}),(req,res)=>{
+    const serializedUser ={
+        id: req.user._id,
+        name : `${req.user.first_name} ${req.user.last_name}`,
+        role: req.user.rol,
         email:req.user.email
-    }
-    res.send({status:"success", payload:req.user})
+    };
+    const token = jwt.sign(serializedUser, 'CodeerSecret',{expiresIn:"1h"});
+    console.log(token);
+    res.cookie('coderCookie',token,{maxAge:3600000}).send({
+        status:"succes",
+        payload:serializedUser
+    })
 })
 
-router.get("/faillogin", (req,res)=>{
-    res.send({error:"fail login"})
+router.get("/failedLogin", (req,res)=>{
+    console.log('Mal Login');
+    res.send("Fallo en el Login")
 })
+
+router.get("/current", (req, res) => {
+    if (req.isAuthenticated()) {
+      // Si el usuario está autenticado, devuelve la información del usuario
+      const serializedUser = {
+        id: req.user._id,
+        name: `${req.user.first_name} ${req.user.last_name}`,
+        role: req.user.role,
+        email: req.user.email,
+      };
+      res.json(serializedUser);
+    } else {
+      // Si el usuario no está autenticado, devuelve un código de estado 401
+      res.status(401).json({ message: 'No autenticado' });
+    }
+  });
 
 router.get("/github", passport.authenticate("github", {scope:['user:email']}), async (req,res)=>{});
 
