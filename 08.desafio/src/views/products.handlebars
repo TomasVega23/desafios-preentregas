@@ -1,0 +1,47 @@
+<div>
+    <h1>Product List</h1>
+</div>
+<div>
+        <h1>bienvenido/a</h1>
+    <p>{{user.full_name}}</p>
+    <p>{{user.email}}</p>
+    <p>{{user.age}}</p>
+    <p>{{user.rol}}</p>
+    <a href="/api/sessions/logout"><button>Salir</button></a>
+</div>
+<div>
+    {{#if isAdmin}}
+    <ul>
+        {{#each products}}
+    <form action="/api/carts" method="post">
+        <hr>
+        <li>{{title}}</li>
+        <li>{{description}}</li>
+        <li>{{code}}</li>
+        <li>{{price}}</li>
+        <li>{{stock}}</li>
+        <li>{{category}}</li>
+    <input type="hidden" name="productId" value="{{_id}}">
+    <input type="submit" value="Submit">
+    </form>
+        {{/each}}
+    </ul>
+        <div>
+        ||
+        {{#if products.hasPrevPage}}
+            <a href={{products.prevPage}}>Anterior</a>
+        {{/if}}
+            ||
+        <span>Página {{products.page}} de {{products.totalPages}}</span>
+        ||
+        {{#if products.hasNextPage}}
+            <a href={{products.nextPage}}>Siguiente</a>
+        {{/if}}
+                ||
+            </div>
+    {{else}}
+    <div>No hay productos</div>
+    {{/if}}
+</div>
+
+<script src="/js/index.js"></script>
